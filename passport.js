@@ -26,9 +26,9 @@ passport.use(new GoogleStrategy({
      const user_name = (email.displayName);
      const user_id = (email.id);
 
-     //usersRef.on('value',getData);
+     usersRef.on('value',getData);
 
-     /*function getData(data){
+     function getData(data){
       console.log(data.val());
 
       var exist_data = data.val();
@@ -38,14 +38,10 @@ passport.use(new GoogleStrategy({
       for(var i=0;i<keys.length;i++){
         var k =keys[i];
         var exist_emails = exist_data[k].Email;
-        console.log("existing email" + exist_emails);
-        (if(exist_emails == user_email){
-          console.log("Existing User with emai ID");
-          console.log(user_email);
-        }
+        console.log("existing email" + exist_emails)
         
         }
-      }*/
+      }
 
       var newUser = usersRef.push({
        username : user_name,
